@@ -1,0 +1,14 @@
+{
+  "baseUrl": "https://example.cypress.io",
+  "env": {
+    "environment": "staging",
+    "loginRequestUrl": "https://auth.qa.example.com/",
+    "loginRelayState": "https://qa.example.com"
+  },
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "reports",
+    "reportTitle": "exampleReporter",
+    "overwrite":false
+  }
+}

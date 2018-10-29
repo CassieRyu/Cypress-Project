@@ -1,0 +1,8 @@
+{
+  "baseUrl": "https://example.cypress.io",
+  "videoUploadOnPasses": false,
+  "responseTimeout": 100000,
+  "testFiles": "**/**.spec.js",
+  "viewportHeight": 900,
+  "viewportWidth": 1440
+}

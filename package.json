@@ -1,0 +1,14 @@
+{
+  "name": "cypress.demo",
+  "version": "1.0.0",
+  "description": "Using Cypress which covers basic and advanced use.",
+  "scripts": {
+    "test": "./testRunner.sh",
+    "open": "cypress open"
+  },
+  "devDependencies": {
+    "cypress": "^3.1.0",
+    "mocha": "^5.2.0",
+    "mochawesome": "^3.1.1"
+  }
+}
