@@ -4,11 +4,18 @@
   "description": "Using Cypress which covers basic and advanced use.",
   "scripts": {
     "test": "./testRunner.sh",
-    "open": "cypress open"
+    "open:local": "./node_modules/.bin/cypress open --env configFile=local",
+    "open:dev": "./node_modules/.bin/cypress open --env configFile=dev",
+    "open:qa": "./node_modules/.bin/cypress open --env configFile=qa"
   },
   "devDependencies": {
     "cypress": "^3.1.0",
     "mocha": "^5.2.0",
     "mochawesome": "^3.1.1"
+  },
+  "dependencies": {
+    "rimraf": "^2.6.3",
+    "shelljs": "^0.8.3",
+    "uuid": "^3.3.2"
   }
 }

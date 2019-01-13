@@ -1,7 +1,7 @@
 {
   "baseUrl": "https://dev.example.com",
   "env": {
-    "environment": "qa",
+    "environment": "dev",
     "loginRequestUrl": "https://auth.dev.example.com/",
     "loginRelayState": "https://dev.example.com"
   },
@@ -9,6 +9,6 @@
   "reporterOptions": {
     "reportDir": "reports",
     "reportTitle": "exampleReporter",
-    "overwrite":false
+    "overwrite":true
   }
 }

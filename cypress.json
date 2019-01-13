@@ -2,7 +2,13 @@
   "baseUrl": "https://example.cypress.io",
   "videoUploadOnPasses": false,
   "responseTimeout": 100000,
-  "testFiles": "**/**.spec.js",
+  "testFiles": "**/**.js",
   "viewportHeight": 900,
-  "viewportWidth": 1440
+  "viewportWidth": 1440,
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "reports",
+    "reportTitle": "exampleReporter",
+    "overwrite":false
+  }
 }

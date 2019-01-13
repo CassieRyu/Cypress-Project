@@ -1,7 +1,7 @@
 {
   "baseUrl": "https://example.cypress.io",
   "env": {
-    "environment": "staging",
+    "environment": "qa",
     "loginRequestUrl": "https://auth.qa.example.com/",
     "loginRelayState": "https://qa.example.com"
   },
@@ -9,6 +9,6 @@
   "reporterOptions": {
     "reportDir": "reports",
     "reportTitle": "exampleReporter",
-    "overwrite":false
+    "overwrite":true
   }
 }

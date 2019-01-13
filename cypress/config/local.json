@@ -1,5 +1,5 @@
 {
-  "baseUrl": "http://localhost:3000/",
+  "baseUrl": "https://example.cypress.io",
   "env": {
     "environment": "local",
     "loginRequestUrl": "http://localhost:8000/",
