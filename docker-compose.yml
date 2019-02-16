@@ -1,0 +1,7 @@
+version: '0.1'
+services:
+  e2eTests:
+      image: 19921224/cypress-demo:1.1
+      volumes:
+            - ./:/Cypress-Project
+      command: ['./testRunner.sh', 'local', 'functional']
