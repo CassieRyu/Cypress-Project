@@ -6,7 +6,8 @@
     "test": "./testRunner.sh",
     "open:local": "./node_modules/.bin/cypress open --env configFile=local",
     "open:dev": "./node_modules/.bin/cypress open --env configFile=dev",
-    "open:qa": "./node_modules/.bin/cypress open --env configFile=qa"
+    "open:qa": "./node_modules/.bin/cypress open --env configFile=qa",
+    "update": "cypress run --env updateSnapshots=true"
   },
   "devDependencies": {
     "cypress": "^3.1.5",

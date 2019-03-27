@@ -2,9 +2,7 @@ const path = require('path');
 const uuidv1 = require('uuid/v1');
 const rimraf = require('rimraf');
 const shell = require('shelljs');
-
 const combine = require('./combine.js');
-
 
 // generate mochawesome report
 const data = combine.combineMochaAwesomeReports();
