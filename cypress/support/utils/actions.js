@@ -28,10 +28,18 @@ export const selectDropdownList = function (labelText, valueText, parentCss) {
 	});
 };
 
-export const enterInput = function (labelText, valueText, parentCss) {
+export const enterInputByLable = function (labelText, valueText, parentCss) {
 	if (parentCss === undefined) parentCss = 'document';
 	cy.get(parentCss).within(() => {
 		cy.contains('div', labelText).next()
 			.find('input').focus().clear().type(valueText);
 	});
+};
+
+export const enterInputByElement = function (element, value) {
+	cy.get(element).type(value);
+};
+
+export const checkRadioOrCheckbox = function (element) {
+	cy.get(element).find('input').check();
 };

@@ -22,5 +22,5 @@ echo ">>>: ENV:${ENV}, SUITE:${SUITE}, SPEC:${SPEC}"
 ./node_modules/.bin/cypress run --env configFile=${ENV} --spec "${SPEC}"
 
 result=$?
- node scripts/mergeReports.js
+ node reportScripts/mergeReports.js
 exit $result
