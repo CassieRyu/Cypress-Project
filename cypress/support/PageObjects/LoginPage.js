@@ -17,6 +17,9 @@ export const inputEntityId = function (entityId = 'S44523424') {
 	action.enterInputByElement(userEntityIdElem, entityId);
 	return entityId;
 };
+export const submitLogin = function () {
+	action.hitButton('Log In');
+};
 export const loginWithAPI = function (userData = generateRandomUser()) {
 	return cy.request(
 		{

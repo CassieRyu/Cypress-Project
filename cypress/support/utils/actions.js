@@ -43,3 +43,10 @@ export const enterInputByElement = function (element, value) {
 export const checkRadioOrCheckbox = function (element) {
 	cy.get(element).find('input').check();
 };
+export const hitButton = function (buttonText) {
+	if(buttonText === undefined) {
+		cy.get('button').click();
+	} else {
+		cy.contains('button', buttonText).click();
+	}
+};
