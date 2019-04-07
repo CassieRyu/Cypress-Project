@@ -1,18 +1,26 @@
-import * as landingPage from '../../support/PageObjects/LandingPage';
-import * as loginPage from '../../support/PageObjects/LoginPage';
-import * as assertion from '../../support/utils/assertions';
+import * as landingPage from '../../support/Pages/LandingPage';
+import * as loginPage from '../../support/Pages/LoginPage';
+import * as assertions from '../../support/Utils/Assertions';
+import * as header from '../../support/Pages/Header';
 
-describe('login', ()=>{
+describe('Login', ()=>{
 
-	before('landing Page', ()=>{
-		landingPage.goToLandingPage();
-		landingPage.goToLoginPage('Log In');
-	});
-	it('test login function', () => {
-		const userName = 'Steven Smith';
-		loginPage.inputUserName(userName);
-		loginPage.inputUserPassword('12323123');
-		loginPage.submitLogin();
-		assertion.assertTextDisplay(`Welcome ${userName} !`, true, 'h3');
+	context ('Login Function', () => {
+		before('landing Page', ()=>{
+			landingPage.goToLandingPage();
+			landingPage.goToLoginPage('Log In');
+		});
+		after('log out', ()=>{
+			header.logOut();
+		});
+
+		it('test login page', () => {
+			const userName = 'Steven Smith';
+			loginPage.inputUserName(userName);
+			loginPage.inputUserPassword('12323123');
+			loginPage.submitLogin();
+			assertions.urlInclude('/dashboard');
+			assertions.assertTextDisplay(`Welcome ${userName} !`, true, 'h3');
+		});
 	});
 });

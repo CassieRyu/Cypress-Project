@@ -1,9 +1,9 @@
-import * as action from '../utils/actions.js';
+import * as actions from '../Utils/Actions.js';
 
 export const goToLandingPage = function () {
 	cy.visit('/');
 };
 
 export const goToLoginPage = function (loginButton = 'Log In') {
-	action.hitButton(loginButton);
+	actions.hitButton(loginButton);
 };

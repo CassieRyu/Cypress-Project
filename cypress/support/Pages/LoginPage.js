@@ -1,21 +1,21 @@
-import * as action from '../utils/actions.js';
-import * as token from '../utils/token.js';
+import * as action from '../Utils/Actions.js';
+import * as data from '../Utils/Data.js';
 
-const userNameElem = 'div[class*=__userName--]';
-const userPasswordElem = 'div[class*=__userPassword--]';
-const userEntityIdElem = '#Entity div[class*=__id--]';
 
 export const inputUserName = function (userName = 'defaul name') {
+	const userNameElem = 'div[class*=__userName--]';
 	action.enterInputByElement(userNameElem, userName);
 	return userName;
 };
 export const inputUserPassword = function (password = '12312312') {
+	const userPasswordElem = 'div[class*=__userPassword--]';
 	action.enterInputByElement(userPasswordElem, password);
 	return password;
 };
-export const inputEntityId = function (entityId = 'S44523424') {
-	action.enterInputByElement(userEntityIdElem, entityId);
-	return entityId;
+export const inputUserId = function (userId = 'S44523424') {
+	const userEntityIdElem = '#Entity div[class*=__id--]';
+	action.enterInputByElement(userEntityIdElem, userId);
+	return userId;
 };
 export const submitLogin = function () {
 	action.hitButton('Log In');
@@ -29,7 +29,6 @@ export const loginWithAPI = function (userData = generateRandomUser()) {
 			body: {
 				RelayState: Cypress.env('loginRelayState'),
 				accountType: userData.accountType,
-				entityId: userData.entityId,
 				userName: userData.userName,
 				userId: userData.userId,
 				userFullName: userData.userFullName
@@ -40,20 +39,18 @@ export const loginWithAPI = function (userData = generateRandomUser()) {
 		.then((body) => {
 			const $html = Cypress.$(body);
 			const $token = $html.find('input[name=token]').val();
-			token.dataSingleton.getInstance().setToken($token);
+			data.dataSingleton.getInstance().setToken($token);
 			cy.visit('/login?token=' + $token).then(() => {
 				return $token;
 			});
 		});
 };
 export const generateRandomUser = ()=>{
-	const entityID = chance.character({pool: 'BCDEFGHIJK'})+chance.ssn({ dashes: false });
 	const userName = chance.name({ middle: true });
-	const userId = generateNRIC('S');
+	const userId = chance.character({pool: 'BCDEFGHIJK'})+chance.ssn({ dashes: false });
 
 	const userData = {
 		accountType: 'User',
-		entityId: entityID,
 		userName: chance.last(),
 		userId: userId,
 		userFullName: userName

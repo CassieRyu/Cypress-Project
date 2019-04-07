@@ -14,3 +14,7 @@ export const assertTextDisplay = function (text, display = true, element = 'html
 		cy.contains(element, text).should('not.visible');
 	}
 };
+
+export const urlInclude = function (url) {
+	cy.url().should('include', url);
+};
