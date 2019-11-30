@@ -24,7 +24,7 @@ export let dataSingleton = (function () {
 				userData = user;
 			},
 			getUserData: function () {
-				return userData
+				return userData;
 			}
 		};
 	}

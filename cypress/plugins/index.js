@@ -11,7 +11,7 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
-const {addMatchImageSnapshotPlugin,} = require('cypress-image-snapshot/plugin');
+const {addCleanupDiffOutputCommand, addMatchImageSnapshotPlugin} = require('cypress-image-diff/plugin');
 const cypressEslint = require('cypress-eslint-preprocessor');
 //const { queryDb } = require('../support/utils/query');
 
@@ -82,7 +82,7 @@ module.exports = (on, config) => {
 		}
 	});
 
-	addMatchImageSnapshotPlugin(on);
+	addMatchImageSnapshotPlugin(on, config);
 	const file = config.env.configFile || 'qa';
 	return getConfigurationByFile(file);
 

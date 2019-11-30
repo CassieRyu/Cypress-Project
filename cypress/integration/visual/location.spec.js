@@ -2,7 +2,7 @@
 
 context('Location', () => {
 	beforeEach(() => {
-		cy.visit('https://example.cypress.io/commands/location')
+		cy.visit('https://example.cypress.io/commands/location');
 	});
 
 	it('cy.location() - get window.location', () => {
@@ -18,7 +18,7 @@ context('Location', () => {
 			expect(location.protocol).to.eq('https:');
 			expect(location.search).to.be.empty;
 		});
-		cy.matchImageSnapshot('location page');
+		cy.matchImageSnapshot('location page', { capture: 'fullPage' });
 	});
 
 });

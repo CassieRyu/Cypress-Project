@@ -11,8 +11,10 @@
     }
   },
   "rules": {
-    "no-unused-expressions": 0,
-    "chai-friendly/no-unused-expressions": 2,
+    "cypress/no-assigning-return-values": "error",
+    "cypress/no-unnecessary-waiting": "error",
+    "no-unused-expressions": "off",
+    "chai-friendly/no-unused-expressions": "error",
     "indent": [
       "error",
       "tab"

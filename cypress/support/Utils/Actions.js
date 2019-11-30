@@ -17,13 +17,13 @@ export const selectDropdownList = function (labelText, valueText, parentCss) {
 		cy.get(parentCss).within(() => {
 			cy.contains('div', labelText, {timeout:10000}).next().find('div[class*="dropdown__control"]')
 				.find('input').focus().type(' ', { force: true }).then(() => {
-				getRandomValueFromDropdownList(parentCss).then(($random) => {
-					cy.log($random);
-					if (valueText === undefined) valueText = $random;
-					cy.get('div[class*="dropdown__menu-list"]').contains('div', valueText).click();
-					resolve(valueText);
+					getRandomValueFromDropdownList(parentCss).then(($random) => {
+						cy.log($random);
+						if (valueText === undefined) valueText = $random;
+						cy.get('div[class*="dropdown__menu-list"]').contains('div', valueText).click();
+						resolve(valueText);
+					});
 				});
-			});
 		});
 	});
 };

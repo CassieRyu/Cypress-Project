@@ -1,7 +1,18 @@
-version: '0.1'
+version: '3.7'
 services:
-  e2eTests:
-      image: 19921224/cypress-demo:1.1
+  e2e-local:
+      build:
+        context: .
+        dockerfile: Dockerfile
       volumes:
             - ./:/Cypress-Project
-      command: ['./testRunner.sh', 'local', 'functional']
+      command: ['npm', 'run', 'test', 'local', 'visual']
+
+  e2e-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      volumes:
+        - ./:/Cypress-Project
+      command: ['npm', 'run', 'test', 'dev', 'visual']
+

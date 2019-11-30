@@ -4,5 +4,6 @@
   "responseTimeout": 100000,
   "testFiles": "**/**.js",
   "viewportHeight": 900,
-  "viewportWidth": 1440
+  "viewportWidth": 1440,
+  "screenshotOnRunFailure": false
 }

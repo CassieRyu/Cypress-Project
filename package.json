@@ -7,17 +7,21 @@
     "open:local": "./node_modules/.bin/cypress open --env configFile=local",
     "open:dev": "./node_modules/.bin/cypress open --env configFile=dev",
     "open:qa": "./node_modules/.bin/cypress open --env configFile=qa",
-    "update": "cypress run --env updateSnapshots=true"
+    "update": "cypress run --env updateSnapshots=true",
+    "lint": "./node_modules/.bin/eslint cypress/",
+    "fixLint": "./node_modules/.bin/eslint cypress/ --fix"
   },
   "devDependencies": {
-    "cypress": "^3.1.5",
+    "cypress": "^3.7.0",
     "mocha": "^5.2.0",
     "mochawesome": "^3.1.1",
     "ssh2-sftp-client": "^2.4.3"
   },
   "dependencies": {
+    "babel-eslint": "^10.0.3",
     "cypress-eslint-preprocessor": "^1.2.2",
-    "cypress-image-snapshot": "^3.0.0",
+    "cypress-image-diff": "^2.0.0",
+    "eslint-plugin-chai-friendly": "^0.5.0",
     "eslint-plugin-cypress": "^2.2.0",
     "rimraf": "^2.6.3",
     "shelljs": "^0.8.3",

@@ -17,9 +17,8 @@ ENV npm_config_unsafe_perm true
 # https://github.com/cypress-io/cypress/issues/1243
 ENV CI=1
 
-COPY package.json /tmp
-COPY package-lock.json  /tmp
-
-RUN cd /tmp && npm install && npm audit fix
-
+RUN mkdir /Cypress-Project
+COPY package.json /Cypress-Project
+COPY package-lock.json  /Cypress-Project
 WORKDIR /Cypress-Project
+RUN npm install && npm audit fix

@@ -2,7 +2,7 @@
 
 ENV="$1"
 SUITE="$2"
-SPEC="**/**.js"
+SPEC="**/**.spec.js"
 
 if [ "${SUITE}" = "visual" ] ; then
     rm -r cypress/snapshots/visual/**/__diff_output__
