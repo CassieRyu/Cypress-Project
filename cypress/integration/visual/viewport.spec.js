@@ -27,10 +27,9 @@ context('Viewport', () => {
 		// We added a cy.wait() between each viewport change so you can see
 		// the change otherwise it is a little too fast to see :)
 		cy.viewport('iphone-xr');
-
 		cy.matchImageSnapshot('iphone-xr viewport', { capture: 'fullPage' });
-		cy.viewport('iphone-6');
 
+		cy.viewport('iphone-6');
 		cy.matchImageSnapshot('iphone-6 viewport', { capture: 'fullPage' });
 
 		// cy.viewport() accepts an orientation for all presets

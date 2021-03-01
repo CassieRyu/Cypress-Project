@@ -7,6 +7,7 @@
     "open:local": "./node_modules/.bin/cypress open --env configFile=local",
     "open:dev": "./node_modules/.bin/cypress open --env configFile=dev",
     "open:qa": "./node_modules/.bin/cypress open --env configFile=qa",
+    "run:qa": "./node_modules/.bin/cypress run --browser chrome --env configFile=qa",
     "update": "cypress run --env updateSnapshots=true",
     "lint": "./node_modules/.bin/eslint cypress/",
     "fixLint": "./node_modules/.bin/eslint cypress/ --fix"

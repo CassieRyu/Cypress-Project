@@ -6,3 +6,4 @@ test-report/
 .DS_Store
 cypress/.DS_Store
 cypress/snapshots/
+reports/
