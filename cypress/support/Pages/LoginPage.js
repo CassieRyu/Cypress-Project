@@ -2,7 +2,7 @@ import * as action from '../Utils/Actions.js';
 import * as data from '../Utils/Data.js';
 
 
-export const inputUserName = function (userName = 'defaul name') {
+export const inputUserName = function (userName = 'default name') {
 	const userNameElem = 'div[class*=__userName--]';
 	action.enterInputByElement(userNameElem, userName);
 	return userName;
