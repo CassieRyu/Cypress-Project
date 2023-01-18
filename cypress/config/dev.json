@@ -1,14 +1,9 @@
 {
+  "extends": "./cypress.config.js",
   "baseUrl": "https://dev.example.com",
   "env": {
     "environment": "dev",
     "loginRequestUrl": "https://auth.dev.example.com/",
     "loginRelayState": "https://dev.example.com"
-  },
-  "reporter": "mochawesome",
-  "reporterOptions": {
-    "reportDir": "reports",
-    "reportTitle": "exampleReporter",
-    "overwrite":true
   }
 }

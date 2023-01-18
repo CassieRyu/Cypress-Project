@@ -2,7 +2,6 @@ node_modules
 cypress/videos
 cypress/screenshots/
 .idea/
-test-report/
 .DS_Store
 cypress/.DS_Store
 cypress/snapshots/

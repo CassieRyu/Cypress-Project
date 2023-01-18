@@ -1,15 +1,10 @@
 {
-  "baseUrl": "https://example.cypress.io",
+  "extends": "./cypress.config.js",
+  "baseUrl": "http://localhost:3000/",
   "env": {
     "environment": "local",
-    "loginRequestUrl": "http://localhost:8000/",
-    "loginRelayState": "http://localhost:3000/",
-    "companyInfoUrl": "http://localhost:8080/api/company-profile"
-  },
-  "reporter": "mochawesome",
-  "reporterOptions": {
-    "reportDir": "reports",
-    "reportTitle": "exampleReporter",
-    "overwrite":false
+    "loginUrl": "http://localhost:3000/signin/",
+    "signUpUrl": "http://localhost:3000/",
+    "signUpRequestUrl": "http://localhost:3001/users"
   }
 }

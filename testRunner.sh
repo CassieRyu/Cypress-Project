@@ -6,15 +6,15 @@ SPEC="**/**.spec.js"
 
 if [ "${SUITE}" = "visual" ] ; then
     rm -r cypress/snapshots/visual/**/__diff_output__
-    SPEC="cypress/integration/visual/*.spec.js"
+    SPEC="cypress/e2e/visual/*.spec.js"
 else
 
 if [ "${SUITE}" = "functional" ] ; then
-    SPEC="cypress/integration/functional/*.spec.js"
+    SPEC="cypress/e2e/functional/*.spec.js"
 
 else
      rm -r cypress/snapshots/visual/**/__diff_output__
-     SPEC="cypress/integration/**/**.spec.js"
+     SPEC="cypress/e2e/**/**.spec.js"
 fi
 fi
 
