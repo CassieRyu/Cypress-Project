@@ -3,6 +3,8 @@ import * as signUpPage from '../../support/Pages/SignUpPage';
 import * as assertions from '../../support/Utils/Assertions';
 
 describe('Sign up with a new user test', () => {
+  const testDataFile = Cypress.env('testDataPath') + 'users.json';
+
   context('sign up with name and password', () => {
     beforeEach('go to login page', () => {
       loginPage.landOnLoginPage();
@@ -15,12 +17,15 @@ describe('Sign up with a new user test', () => {
 
     it('happy path: sign up with a normal user', () => {
       loginPage.clickToSignUpPage();
-      signUpPage.enterFirstName('John');
-      signUpPage.enterFirstName('Smith');
-      signUpPage.enterUserName('smith');
-      signUpPage.enterPassword('test');
-      signUpPage.enterConfirmPassword('test');
-      signUpPage.clickSignUpBtn();
+      cy.fixture(testDataFile).then((users) => {
+        var normalUser = users[0];
+        signUpPage.enterFirstName(normalUser.name);
+        signUpPage.enterLastName('Smith');
+        signUpPage.enterUserName(normalUser.username);
+        signUpPage.enterPassword(normalUser.address.zipcode);
+        signUpPage.enterConfirmPassword(normalUser.address.zipcode);
+        signUpPage.clickSignUpBtn();
+      });
     });
   });
 });

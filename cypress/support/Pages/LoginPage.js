@@ -21,8 +21,7 @@ export const submitLogin = function () {
 };
 
 export const landOnLoginPage = function () {
-  //   cy.visit(Cypress.env('loginUrl'));
-  cy.visit('http://localhost:3000/signin/');
+  cy.visit(Cypress.env('loginUrl'));
 };
 export const clickToSignUpPage = function () {
   const signUpLinkElem = 'a[data-test=signup]';

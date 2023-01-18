@@ -5,6 +5,7 @@
     "environment": "local",
     "loginUrl": "http://localhost:3000/signin/",
     "signUpUrl": "http://localhost:3000/",
-    "signUpRequestUrl": "http://localhost:3001/users"
+    "signUpRequestUrl": "http://localhost:3001/users/",
+    "testDataPath": "local/"
   }
 }

@@ -54,14 +54,6 @@ npm run open:local
 
 ### Reporter
 
-- Merge JSON report
-
-#### because by default, each spec has a separate test report
-
-```$xslt
-npm run mergeReport
-```
-
 - Generate HTML Report
 
 ```$xslt

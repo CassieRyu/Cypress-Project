@@ -4,6 +4,7 @@
   "env": {
     "environment": "dev",
     "loginRequestUrl": "https://auth.dev.example.com/",
-    "loginRelayState": "https://dev.example.com"
+    "loginRelayState": "https://dev.example.com/",
+    "testDataPath": "dev/"
   }
 }

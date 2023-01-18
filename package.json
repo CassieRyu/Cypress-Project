@@ -10,8 +10,7 @@
     "open:qa": "cypress open --env configFile=qa",
     "run:local": "cypress run --browser chrome --env configFile=local",
     "record": "--record --key d1a610da-a97d-4176-b134-42a6999ae1e7",
-    "mergeReport": "mochawesome-merge cypress/reports/mochawesome-report/mochawesome*.json>cypress/reports/mochawesome-report/combineReport.json",
-    "generateHTMLReport": "marge cypress/reports/mochawesome-report/combineReport.json --reportDir cypress/reports/mochawesome-report/ --inline",
+    "generateHTMLReport": "mochawesome-merge cypress/reports/mochawesome-report/mochawesome*.json>cypress/reports/mochawesome-report/combineReport.json && marge cypress/reports/mochawesome-report/combineReport.json --reportDir cypress/reports/mochawesome-report/ --inline",
     "update": "cypress run --env updateSnapshots=true",
     "lint": "./node_modules/.bin/eslint cypress/",
     "fixLint": "./node_modules/.bin/eslint cypress/ --fix"

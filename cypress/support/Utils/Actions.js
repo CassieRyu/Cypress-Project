@@ -50,18 +50,21 @@ export const enterInputByLable = function (labelText, valueText, parentCss) {
 };
 
 export const enterInputByElement = function (element, value) {
-  cy.get(element).type(value);
+  cy.get(element).clear().type(value);
 };
 
 export const checkRadioOrCheckbox = function (element) {
   cy.get(element).find('input').check();
 };
-export const hitButton = function (buttonText) {
+export const hitButtonWithText = function (buttonText) {
   if (buttonText === undefined) {
     cy.get('button').click();
   } else {
     cy.contains('button', buttonText).click();
   }
+};
+export const hitBtnByElem = function (element) {
+  cy.get(element).should('not.be.disabled').click();
 };
 export const clickLink = function (element) {
   cy.get(element).click();

@@ -27,6 +27,6 @@ export const enterConfirmPassword = (value) => {
 };
 
 export const clickSignUpBtn = () => {
-  // const signUpBtnElem = 'button[test-data=signup-submit]';
-  action.hitButton('SIGN UP');
+  const signUpBtnElem = 'button[data-test=signup-submit]';
+  action.hitBtnByElem(signUpBtnElem);
 };
