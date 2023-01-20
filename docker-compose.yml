@@ -1,18 +1,35 @@
 version: '3.7'
 services:
-  e2e-local:
+  real-world-app:
+    build:
+      context: ../cypress-realworld-app/
+      cache_from:
+        - real-world-app:1.0
+    volumes:
+      - ../cypress-realworld-app/:/app
+    ports:
+      - "3000:3000"
+    command: ['yarn', 'start']
+
+  e2e-qa:
       build:
         context: .
         dockerfile: Dockerfile
+#        cache_from:
+#          - cypress-project:107
+#      depends_on:
+#        - real-world-app
+##      ports:
+##        - "3000:3000"
       volumes:
             - ./:/Cypress-Project
-      command: ['npm', 'run', 'test', 'local', 'visual']
+      command: ['yarn', 'run', 'run:qa']
 
   e2e-dev:
     build:
       context: .
       dockerfile: Dockerfile
-      volumes:
-        - ./:/Cypress-Project
-      command: ['npm', 'run', 'test', 'dev', 'visual']
+    volumes:
+      - ./:/Cypress-Project
+    command: ['yarn', 'run', 'test', 'dev', 'functional']
 

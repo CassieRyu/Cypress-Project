@@ -1,9 +1,11 @@
-FROM cypress/browsers:chrome69
+# FROM cypress/browsers:chrome69
+FROM cypress/base:16.16.0
+# https://github.com/cypress-io/cypress-docker-images/tree/master/browsers
 
 USER root
 
 RUN node --version
-RUN npm --version
+RUN yarn --version
 
 # WORKDIR /tmp
 # a few environment variables to make NPM installs easier
@@ -17,8 +19,12 @@ ENV npm_config_unsafe_perm true
 # https://github.com/cypress-io/cypress/issues/1243
 ENV CI=1
 
+RUN apt-get update && apt-get -y install python3 cmake g++
+# To resolve the cpu-feature failure: https://github.com/backstage/backstage/issues/7523
+
 RUN mkdir /Cypress-Project
 COPY package.json /Cypress-Project
-COPY package-lock.json  /Cypress-Project
+COPY yarn.lock  /Cypress-Project
 WORKDIR /Cypress-Project
-RUN npm install && npm audit fix
+RUN yarn
+# RUN yarn audit fix
