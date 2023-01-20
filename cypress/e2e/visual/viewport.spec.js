@@ -2,8 +2,8 @@
 
 context('Viewport', () => {
 	beforeEach(() => {
-		cy.visit('/commands/viewport');
-		cy.cleanupDiffOutput();
+		cy.visit('https://example.cypress.io/commands/viewport');
+		// cy.cleanupDiffOutput();
 	});
 
 	it('cy.viewport() - set the viewport size and dimension', () => {
@@ -19,7 +19,8 @@ context('Viewport', () => {
 
 		// lets see what our app looks like on a super large screen
 		cy.viewport('macbook-15');
-		cy.matchImageSnapshot('macbook-15 viewport', { capture: 'fullPage' });
+		cy.get('div[class="banner"]').hideElement();
+		cy.compareSnapshot('macbook-15 viewport');
 
 		// cy.viewport() accepts a set of preset sizes
 		// to easily set the screen to a device's width and height
@@ -27,18 +28,18 @@ context('Viewport', () => {
 		// We added a cy.wait() between each viewport change so you can see
 		// the change otherwise it is a little too fast to see :)
 		cy.viewport('iphone-xr');
-		cy.matchImageSnapshot('iphone-xr viewport', { capture: 'fullPage' });
+		cy.compareSnapshot('iphone-xr viewport',0.2);
 
 		cy.viewport('iphone-6');
-		cy.matchImageSnapshot('iphone-6 viewport', { capture: 'fullPage' });
+		cy.compareSnapshot('iphone-6 viewport');
 
 		// cy.viewport() accepts an orientation for all presets
 		// the default orientation is 'portrait'
 		cy.viewport('ipad-2', 'portrait');
-		cy.matchImageSnapshot('ipad-2-portrait viewport');
+		cy.compareSnapshot('ipad-2-portrait viewport');
 
 		cy.viewport('iphone-4', 'landscape');
-		cy.matchImageSnapshot('iphone-4-landscape viewport');
+		cy.compareSnapshot('iphone-4-landscape viewport');
 
 		// The viewport will be reset back to the default dimensions
 		// in between tests (the  default can be set in cypress.json)

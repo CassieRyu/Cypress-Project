@@ -18,7 +18,7 @@ context('Location', () => {
 			expect(location.protocol).to.eq('https:');
 			expect(location.search).to.be.empty;
 		});
-		cy.matchImageSnapshot('location page', { capture: 'fullPage' });
+		cy.compareSnapshot('location page');
 	});
 
 });

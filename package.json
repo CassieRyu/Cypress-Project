@@ -11,7 +11,7 @@
     "run:local": "cypress run --browser chrome --env configFile=local",
     "run:qa": "cypress run --browser electron --env configFile=qa",
     "generateHTMLReport": "mochawesome-merge cypress/reports/mochawesome-report/mochawesome*.json>cypress/reports/mochawesome-report/combineReport.json && marge cypress/reports/mochawesome-report/combineReport.json --reportDir cypress/reports/mochawesome-report/ --inline",
-    "update": "cypress run --env updateSnapshots=true",
+    "update": "cypress-image-diff -u",
     "lint": "./node_modules/.bin/eslint cypress/",
     "fixLint": "./node_modules/.bin/eslint cypress/ --fix"
   },
@@ -24,8 +24,7 @@
   },
   "dependencies": {
     "babel-eslint": "^10.1.0",
-    "cypress-eslint-preprocessor": "^1.2.2",
-    "cypress-image-diff": "^2.0.0",
+    "cypress-image-diff-js": "^1.23.0",
     "eslint-plugin-chai-friendly": "^0.7.2",
     "eslint-plugin-cypress": "^2.12.1",
     "rimraf": "^4.1.1",

@@ -32,7 +32,7 @@ in docker-compose file
 ### Build
 
 ```$xslt
-npm install
+yarn
 ```
 
 ### Test
@@ -40,30 +40,39 @@ npm install
 - Run in headless mode
 
 ```$xslt
-npm run test
+yarn run test
 ```
 
 can add env and suite arguments
-e.g. `npm run test local functional`
+e.g. `yarn run test local functional`
 
 - Run in GUI
 
 ```$xslt
-npm run open:local
+yarn run open:local
 ```
-
+### Visual Test
+Visual test cases in `/e2e/visual/` folder, run tests in this folder with above Test commands.
+- Run visual test
+```$xslt
+yarn run test local visual
+```
+- Update baseline
+```$xslt
+yarn run update
+```
 ### Reporter
 
 - Generate HTML Report
 
 ```$xslt
-npm run generateHTMLReport
+yarn run generateHTMLReport
 ```
 
 - Clear existing reports before RUN
 
 ```$xslt
-npm run clearReports
+yarn run clearReports
 ```
 
 More refers to `package.json` file

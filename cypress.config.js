@@ -1,4 +1,5 @@
 const { defineConfig } = require('cypress');
+const getCompareSnapshotsPlugin = require('cypress-image-diff-js/dist/plugin');
 
 module.exports = defineConfig({
   projectId: 'a3b5tn',
@@ -22,6 +23,7 @@ module.exports = defineConfig({
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
     setupNodeEvents(on, config) {
+      getCompareSnapshotsPlugin(on, config);
       return require('./cypress/plugins/index.js')(on, config);
     },
     // baseUrl: 'http://localhost:3000/',

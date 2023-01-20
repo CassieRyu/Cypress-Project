@@ -11,11 +11,6 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
-const {
-  addCleanupDiffOutputCommand,
-  addMatchImageSnapshotPlugin,
-} = require('cypress-image-diff/plugin');
-const cypressEslint = require('cypress-eslint-preprocessor');
 //const { queryDb } = require('../support/utils/query');
 
 let Client = require('ssh2-sftp-client');
@@ -86,10 +81,6 @@ module.exports = (on, config) => {
       return queryDb(query);
     },
   });
-
-  //   addMatchImageSnapshotPlugin(on, config);
-  //   const file = config.env.configFile || 'qa';
-  //   return getConfigurationByFile(file);
 
   const environment = config.env.configFile || 'local';
   const configurationForEnvironment = fetchConfigurationByFile(environment);
