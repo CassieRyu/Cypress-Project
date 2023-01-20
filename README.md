@@ -4,11 +4,11 @@ Using Cypress which covers basic and advanced use.
 
 ## Features
 
-- Support multi environments
+- Support multi environments config
 - Visual testing
 - Mochawesome Report
 - Docker support
-- Eslint
+- Please note: some tests may fail, because for this project, more important thing is the structure of a good Cypress framework. Test cases would be different for different projects.
 
 ## Run in docker
 
