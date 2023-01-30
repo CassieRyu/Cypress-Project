@@ -12,20 +12,21 @@ Using Cypress which covers basic and advanced use.
 
 ## Run in docker
 
-Use
+Use docker compose (normally in CI)
 
 ```
 docker-compose up e2e-local
 ```
 
-or
+or use below with customized params 
 
 ```
-docker-compose up e2e-dev
+docker run -i -v $PWD:/Cypress-Project -t cypress-project:107 yarn run test qa functional
 ```
 
-Now I only config `visual` test in docker, can change to `functional` or `all`
-in docker-compose file
+- Where `cypress-project:107` is my local image
+- Able to change env `qa` to `local` or `dev`
+- `functional` means ONLY run e2e functional tests, if want to run visual test, use `visual` instead, or leave blank, which will run all functional and visual tests
 
 ## Run from local
 

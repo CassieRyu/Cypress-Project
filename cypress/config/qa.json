@@ -3,6 +3,8 @@
   "baseUrl": "https://example.cypress.io",
   "env": {
     "environment": "qa",
+    "loginUrl": "http://localhost:3000/signin/",
+    "signUpUrl": "http://localhost:3000/",
     "loginRequestUrl": "https://auth.qa.example.com/",
     "loginRelayState": "https://qa.example.com/",
     "testDataPath": "qa/"

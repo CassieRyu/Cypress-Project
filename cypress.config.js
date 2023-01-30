@@ -3,7 +3,7 @@ const getCompareSnapshotsPlugin = require('cypress-image-diff-js/dist/plugin');
 
 module.exports = defineConfig({
   projectId: 'a3b5tn',
-  // videosFolder: cypress / videos,
+  trashAssetsBeforeRuns: true,
   videoUploadOnPasses: false,
   videoCompression: 32,
   responseTimeout: 100000,

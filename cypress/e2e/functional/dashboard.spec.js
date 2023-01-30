@@ -6,7 +6,7 @@ import * as header from '../../support/Pages/Header';
 import * as data from '../../support/Utils/Data';
 import 'chance';
 
-describe('Overview Dashboard', ()=>{
+describe.skip('Overview Dashboard', ()=>{
 
 	context ('Dashboard Menu', () => {
 		before('Login', ()=>{

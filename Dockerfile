@@ -1,5 +1,5 @@
 # FROM cypress/browsers:chrome69
-FROM cypress/base:16.16.0
+FROM cypress/browsers:node18.12.0-chrome107
 # https://github.com/cypress-io/cypress-docker-images/tree/master/browsers
 
 USER root
@@ -28,3 +28,4 @@ COPY yarn.lock  /Cypress-Project
 WORKDIR /Cypress-Project
 RUN yarn
 # RUN yarn audit fix
+#ENTRYPOINT 

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Using Cypress which covers basic and advanced use.",
   "scripts": {
-    "clearReports": "rm -rf cypress/reports/",
+    "clearReports": "rm -rf cypress/reports/ && rm -rf cypress-visual-screenshots/diff/ && rm -rf cypress-visual-screenshots/comparison/",
     "test": "./testRunner.sh",
     "open:local": "cypress open --env configFile=local",
     "open:dev": "cypress open --env configFile=dev",
@@ -16,6 +16,7 @@
     "fixLint": "./node_modules/.bin/eslint cypress/ --fix"
   },
   "devDependencies": {
+    "chance": "^1.1.9",
     "cypress": "^12.3.0",
     "eslint-plugin-chai-friendly": "^0.7.2",
     "eslint-plugin-cypress": "^2.12.1",

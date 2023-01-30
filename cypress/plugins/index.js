@@ -80,6 +80,7 @@ module.exports = (on, config) => {
     'db:query': (query) => {
       return queryDb(query);
     },
+    chance: require("chance"),
   });
 
   const environment = config.env.configFile || 'local';

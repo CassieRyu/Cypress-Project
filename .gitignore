@@ -6,5 +6,5 @@ cypress/.DS_Store
 cypress/reports/
 cypress/screenshots/
 cypress-visual-report
-./cypress-visual-screenshots/comparison/
-./cypress-visual-screenshots/diff/
+cypress-visual-screenshots/comparison/
+cypress-visual-screenshots/diff/

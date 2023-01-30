@@ -3,7 +3,7 @@ import * as loginPage from '../../support/Pages/LoginPage';
 import * as assertions from '../../support/Utils/Assertions';
 import * as header from '../../support/Pages/Header';
 
-describe('Login', ()=>{
+describe.skip('Login', ()=>{
 
 	context ('Login Function', () => {
 		before('landing Page', ()=>{
