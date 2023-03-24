@@ -19,7 +19,11 @@ docker-compose up e2e-local
 ```
 
 or use below with customized params 
-
+* build image
+```
+docker image build -t cypress-project:107 .
+```
+* run container with params
 ```
 docker run -i -v $PWD:/Cypress-Project -t cypress-project:107 yarn run test qa functional
 ```
