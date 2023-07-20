@@ -18,12 +18,16 @@ Use docker compose (normally in CI)
 docker-compose up e2e-local
 ```
 
-or use below with customized params 
-* build image
+or use below with customized params
+
+- build image
+
 ```
 docker image build -t cypress-project:107 .
 ```
-* run container with params
+
+- run container with params
+
 ```
 docker run -i -v $PWD:/Cypress-Project -t cypress-project:107 yarn run test qa functional
 ```
@@ -40,38 +44,48 @@ docker run -i -v $PWD:/Cypress-Project -t cypress-project:107 yarn run test qa f
 yarn
 ```
 
-### Test
+### Functional Test
 
-- Run in headless mode
+- Run with test env param
 
 ```$xslt
-yarn run test
+yarn run run:qa
 ```
 
-can add env and suite arguments
-e.g. `yarn run test local functional`
+or execute with `testRunner.sh` file
 
-- Run in GUI
+```
+yarn run test local functional
+```
+
+- Run in GUI to debug
 
 ```$xslt
 yarn run open:local
 ```
+
 ### Visual Test
+
 Visual test cases in `/e2e/visual/` folder, run tests in this folder with above Test commands.
+
 - Run visual test
+
 ```$xslt
 yarn run test local visual
 ```
+
 - Update baseline
+
 ```$xslt
 yarn run update
 ```
+
 ### Reporter
 
 - Generate HTML Report
 
 ```$xslt
-yarn run generateHTMLReport
+yarn run merge:report
 ```
 
 - Clear existing reports before RUN

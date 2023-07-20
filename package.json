@@ -10,6 +10,7 @@
     "open:qa": "cypress open --env configFile=qa",
     "run:local": "cypress run --browser edge --env configFile=local",
     "run:qa": "cypress run --browser electron --env configFile=qa",
+    "merge:report": "NOW=$(date +%Y-%m-%d_%H-%M-%S) && mochawesome-merge ./cypress/reports/mochawesome-report/mochawesome*.json -o ./cypress/reports/mochawesome-report/report-${NOW}.json && marge ./cypress/reports/mochawesome-report/report-${NOW}.json --reportDir ./cypress/reports/mochawesome-report/ --inline && rm -rf ./cypress/reports/mochawesome-report/mochawesome*.json && rm ./cypress/reports/mochawesome-report/report-${NOW}.json",
     "generateHTMLReport": "mochawesome-merge cypress/reports/mochawesome-report/mochawesome*.json>cypress/reports/mochawesome-report/combineReport.json && marge cypress/reports/mochawesome-report/combineReport.json --reportDir cypress/reports/mochawesome-report/ --inline",
     "update": "cypress-image-diff -u",
     "lint": "./node_modules/.bin/eslint cypress/",
